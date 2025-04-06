@@ -30,7 +30,7 @@ Version:                0.3.1
 Quickly upload any raw disk images into your Hetzner Cloud projects!}
 
 %global golicenses      LICENSE
-%global godocs          docs CHANGELOG.md README.md hcloudimages/CHANGELOG.md
+%global godocs          docs README.md hcloudimages/CHANGELOG.md
 
 Name:           golang-github-apricote-hcloud-upload-image
 Release:        %autorelease
@@ -80,7 +80,6 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %if %{without bootstrap}
 %files
 %license LICENSE
-%doc docs CHANGELOG.md README.md hcloudimages/CHANGELOG.md
 %{_bindir}/hcloud-upload-image
 %endif
 
