@@ -54,13 +54,7 @@ Source:         %{gosource}
 
 %if %{without bootstrap}
 %build
-for cmd in cmd/* ; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
 %gobuild -o %{gobuilddir}/bin/hcloud-upload-image %{goipath}
-for cmd in scripts; do
-  %gobuild -o %{gobuilddir}/bin/$(basename $cmd) %{goipath}/$cmd
-done
 %endif
 
 %install
