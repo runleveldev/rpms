@@ -62,6 +62,18 @@ Source:         %{gosource}
 %if %{without bootstrap}
 install -m 0755 -vd                     %{buildroot}%{_bindir}
 install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
+
+# bash completions
+install -m 0755 -vd %{buildroot}%{bash_completions_dir}
+%{gobuilddir}/bin/hcloud-upload-image completion bash >%{buildroot}%{bash_completions_dir}/hcloud-upload-image
+
+# fish completions
+install -m 0755 -vd %{buildroot}%{fish_completions_dir}
+%{gobuilddir}/bin/hcloud-upload-image completion fish >%{buildroot}%{fish_completions_dir}/hcloud-upload-image.fish
+
+# zsh completions
+install -m 0755 -vd %{buildroot}%{zsh_completions_dir}
+%{gobuilddir}/bin/hcloud-upload-image completion zsh >%{buildroot}%{zsh_completions_dir}/_hcloud-upload-image
 %endif
 
 %if %{without bootstrap}
@@ -75,6 +87,9 @@ install -m 0755 -vp %{gobuilddir}/bin/* %{buildroot}%{_bindir}/
 %files
 %license LICENSE
 %{_bindir}/hcloud-upload-image
+%{bash_completions_dir}/hcloud-upload-image
+%{fish_completions_dir}/hcloud-upload-image.fish
+%{zsh_completions_dir}/_hcloud-upload-image
 %endif
 
 %gopkgfiles
