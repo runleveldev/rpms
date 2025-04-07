@@ -32,7 +32,7 @@ Quickly upload any raw disk images into your Hetzner Cloud projects!}
 %global golicenses      LICENSE
 %global godocs          docs README.md hcloudimages/CHANGELOG.md
 
-Name:           golang-github-apricote-hcloud-upload-image
+Name:           hcloud-upload-image
 Release:        %autorelease
 Summary:        Quickly upload any raw disk images into your Hetzner Cloud projects
 
