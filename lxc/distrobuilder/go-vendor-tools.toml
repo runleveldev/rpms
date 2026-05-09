@@ -1,5 +1,7 @@
 [archive]
 
+[archive.dependency_overrides]
+"github.com/cyphar/filepath-securejoin" = "v0.5.1"
 [licensing]
 detector = "askalono"
 [[licensing.licenses]]
