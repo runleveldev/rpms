@@ -21,6 +21,8 @@ Source1:        %{archivename}-vendor.tar.bz2
 Source2:        go-vendor-tools.toml
 
 BuildRequires:  go-vendor-tools
+BuildRequires:  btrfs-progs-devel
+BuildRequires:  gpgme-devel
 
 %description
 System container image builder for LXC and Incus.
