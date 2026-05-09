@@ -1,0 +1,12 @@
+[archive]
+
+[licensing]
+detector = "askalono"
+[[licensing.licenses]]
+path = "vendor/gopkg.in/yaml.v3/LICENSE"
+sha256sum = "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+expression = "MIT AND (MIT AND Apache-2.0)"
+[[licensing.licenses]]
+path = "vendor/github.com/rootless-containers/proto/go-proto/rootlesscontainers_generate.go"
+sha256sum = "33f40389e298f659cb134da9f13c1c998c406b94a2c79a0ac7de838344d974d1"
+expression = "Apache-2.0"
