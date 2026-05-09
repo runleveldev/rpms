@@ -24,6 +24,8 @@ BuildRequires:  go-vendor-tools
 BuildRequires:  btrfs-progs-devel
 BuildRequires:  gpgme-devel
 
+Requires: /usr/bin/hivexregedit
+
 %description
 System container image builder for LXC and Incus.
 
