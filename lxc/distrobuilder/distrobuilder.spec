@@ -34,7 +34,7 @@ tar -xf %{S:1}
 
 %build
 %global gomodulesmode GO111MODULE=on
-%gobuild -o %{gobuilddir}/bin/distrobuilder %{goipath}
+%gobuild -o %{gobuilddir}/bin/distrobuilder ./distrobuilder
 
 %install
 %go_vendor_license_install -c %{S:2}
