@@ -10,10 +10,14 @@ URL: https://github.com/zabbly/incus-ui-canonical
 Source0: https://github.com/zabbly/%{name}/archive/refs/tags/incus-%{version}.tar.gz
 Source1: %{name}-%{version}-nm-dev.tgz
 Source2: %{name}-%{version}-bundled-licenses.txt
+Source3: 10-%{name}.conf
 
 BuildRequires: yarnpkg
 BuildRequires: nodejs-npm
 BuildRequires: nodejs-devel
+BuildRequires: systemd-rpm-macros
+
+Requires: incus
 
 %description
 LXD-UI is a browser frontend for LXD. It enables easy and accessible container and virtual machine management. Targets small and large scale private clouds.
@@ -32,11 +36,13 @@ yarn build
 %install
 mkdir -p %{buildroot}%{_datadir}/incus-ui-canonical
 cp -a build/ui/. %{buildroot}%{_datadir}/incus-ui-canonical
+install -Dpm0644 %{SOURCE3} %{buildroot}%{_unitdir}/incus.service.d/10-%{name}.conf
 
 %files
 %license LICENSE %{name}-%{version}-bundled-licenses.txt
 %doc README.md
 %{_datadir}/incus-ui-canonical
+%{_unitdir}/incus.service.d/10-%{name}.conf
 
 %changelog
 %autochangelog
