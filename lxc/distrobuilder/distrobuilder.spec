@@ -25,6 +25,7 @@ BuildRequires:  btrfs-progs-devel
 BuildRequires:  gpgme-devel
 
 Requires: /usr/bin/hivexregedit
+Requires: /usr/bin/wimlib-imagex
 
 %description
 System container image builder for LXC and Incus.
